@@ -1,0 +1,38 @@
+﻿<?xml version="1.0"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" 
+                   assembly="QuickStart" namespace="QuickStart.Models">
+
+  <class
+      name="Blog"
+      table="BLOGS"
+      lazy="true">
+
+    <id
+        name="Id"
+        column="BLOG_ID">
+
+      <generator class="native"/>
+
+    </id>
+
+    <property
+        name="Name"
+        column="NAME"
+        not-null="true"
+        unique="true"/>
+
+    <bag
+        name="Items"
+        inverse="true"
+        lazy="true"
+        order-by="DATE_TIME"
+        cascade="all">
+
+      <key column="BLOG_ID"/>
+      <one-to-many class="BlogItem"/>
+
+    </bag>
+
+  </class>
+
+</hibernate-mapping>

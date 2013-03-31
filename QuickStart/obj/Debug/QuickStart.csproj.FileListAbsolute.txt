@@ -1,0 +1,17 @@
+C:\DevProjects\Test\QuickStart\QuickStart\bin\QuickStart.dll
+C:\DevProjects\Test\QuickStart\QuickStart\bin\QuickStart.pdb
+C:\DevProjects\Test\QuickStart\QuickStart\bin\Iesi.Collections.dll
+C:\DevProjects\Test\QuickStart\QuickStart\bin\NHibernate.dll
+C:\DevProjects\Test\QuickStart\QuickStart\bin\Iesi.Collections.pdb
+C:\DevProjects\Test\QuickStart\QuickStart\bin\Iesi.Collections.xml
+C:\DevProjects\Test\QuickStart\QuickStart\bin\NHibernate.pdb
+C:\DevProjects\Test\QuickStart\QuickStart\bin\NHibernate.xml
+C:\DevProjects\Test\QuickStart\QuickStart\obj\Debug\ResolveAssemblyReference.cache
+C:\DevProjects\Test\QuickStart\QuickStart\obj\Debug\QuickStart.dll
+C:\DevProjects\Test\QuickStart\QuickStart\obj\Debug\QuickStart.pdb
+C:\DevProjects\Test\QuickStart\QuickStart\bin\HibernatingRhinos.Profiler.Appender.dll
+C:\Users\mcdeveloper\Downloads\QuickStart-master\QuickStart-master\QuickStart\bin\QuickStart.dll
+C:\Users\mcdeveloper\Downloads\QuickStart-master\QuickStart-master\QuickStart\bin\QuickStart.pdb
+C:\Users\mcdeveloper\Downloads\QuickStart-master\QuickStart-master\QuickStart\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\mcdeveloper\Downloads\QuickStart-master\QuickStart-master\QuickStart\obj\Debug\QuickStart.dll
+C:\Users\mcdeveloper\Downloads\QuickStart-master\QuickStart-master\QuickStart\obj\Debug\QuickStart.pdb
