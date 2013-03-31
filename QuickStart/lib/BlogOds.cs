@@ -34,18 +34,23 @@ namespace QuickStart.lib
 
             ISession session = Global.CurrentSession;
             ITransaction tx = session.BeginTransaction();
-                 
-            _recordCount = session.CreateCriteria(typeof (BlogItem))
+
+            //http://nhforge.org/blogs/nhibernate/archive/2009/01/30/futuret_2D00_queries_2D00_with_2D00_hql_2D00_and_2D00_criteria.aspx
+            IFutureValue<int> count = session.CreateCriteria(typeof(BlogItem))
                                        .CreateCriteria("Blog")
                                        .SetProjection(NHibernate.Criterion.Projections.Count(NHibernate.Criterion.Projections.Id()))
-                                       .FutureValue<int>().Value;
+                                       .FutureValue<int>();
 
-            result = session.CreateCriteria(typeof (BlogItem))
-                                 .CreateCriteria("Blog")
-                                 .SetFirstResult((startIndex - 1)*maximumRows)
-                                 .SetMaxResults(maximumRows)
-                                 .AddOrder((!sortExpression.Contains("DESC"))? NHibernate.Criterion.Order.Asc(sortExpression): NHibernate.Criterion.Order.Desc(sortExpression.Substring(0,sortExpression.IndexOf(" ",System.StringComparison.Ordinal))))
-                                 .Future<BlogItem>().ToList();
+            var blogItems = session.CreateCriteria(typeof(BlogItem))
+                            .CreateCriteria("Blog")
+                            .SetFirstResult((startIndex - 1)*maximumRows)
+                            .SetMaxResults(maximumRows)
+                            .AddOrder((!sortExpression.Contains("DESC"))? NHibernate.Criterion.Order.Asc(sortExpression): NHibernate.Criterion.Order.Desc(sortExpression.Substring(0,sortExpression.IndexOf(" ",System.StringComparison.Ordinal))))
+                            .Future<BlogItem>();
+
+            _recordCount = count.Value;
+            result = blogItems.ToList();
+
             tx.Commit();
 
             return result;
